@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  background-color: #CF8619;
+}
+header {
+  background-color: #8F8FFF;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  box-shadow: 0 5px 15px #000000;
+  top: 0;
+}
+header ul {
+  list-style: none;
+  margin: 0;
+  font-size: 0;
+  padding: 0;
+}
+header ul li {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+header a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 16pt;
+  font-family: sans-serif;
+  line-height: 50px;
+  display: block;
+  width: 100%;
+}
+header a:hover {
+  background: #5566C8;
+}
+#search {
+  display: inline-block;
+  padding: 10px;
+  position: absolute;
+  width: 200px;
+  top: 50px;
+  bottom: 0;
+}
+#search label {
+  text-align: center;
+  display: block;
+  width: 200px;
+}
+#search input, #search select {
+  cursor: pointer;
+}
+#cars {
+  display: inline-block;
+  vertical-align: top;
+  padding: 30px;
+  margin: 50px 0 0 200px;
+}
+.car {
+  width: 200px;
+  height: 200px;
+  background-color: #cccccc;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+h3 {
+  font-family: sans-serif;
+  color: #FFFFFF;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#login {
+  width: 300px;
+  margin: 100px auto 0;
+}
+#login input[type="text"], #login input[type="password"] {
+  display: block;
+  margin-bottom: 20px;
+  height: 30px;
+  width: 100%;
+  font-size: 18pt;
+}
+#login input[type="submit"] {
+  width: 50%;
+  height: 30px;
+  font-size: 13pt;
+}
+#howto {
+  width: 500px;
+  margin: 100px auto 0;
+}
+#vacancies {
+  width: 500px;
+  margin: 100px auto 0;
+}
+#contacts {
+  width: 500px;
+  margin: 100px auto 0;
+}
+p {
+  font-family: fantasy;
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  text-decoration: underline;
+}
+p a:active {
+  background-color: #ccc;
+}
+#howto ol li:first-child {
+  text-decoration: underline;
+}
+header li a::first-letter {
+  color: #000000;
+}
