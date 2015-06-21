@@ -15,7 +15,7 @@
       <nav>
         <ul>
           <li><a href="./index.html">Home</a></li>
-          <li><a href="./login.html">Login</a></li>
+          <li><a id="loginUser" href="./login.html">Login</a></li>
           <li><a href="./howto.html">How to</a></li>
           <li><a href="./vacancies.html">Vacancies</a></li>
           <li><a href="./contacts.html">Contacts</a></li>
@@ -27,7 +27,7 @@
     <!-- SEARCH SECTION START -->
     <section id="search">
       <h3>Find a car</h3>
-      <form class="search-form" action="#" method="get">
+      <form id="getCars" class="search-form" action="#" method="get">
         <label for="mark">Mark:
           <select id="mark" name="mark">
             <option value="nonselected">-Non selected-</option>
@@ -49,38 +49,11 @@
     <!-- SEARCH SECTION END -->
 
     <!-- RESULTS SECTION START -->
-    <main id="cars">
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-      <div class="car"></div>
-    </main>
+    <main id="cars"></main>
     <!-- RESULTS SECTION END -->
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
 
   </body>
 </html>

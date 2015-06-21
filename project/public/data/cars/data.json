@@ -1,0 +1,34 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "mark": "mercedes",
+      "model": "G-klasse",
+      "image": "id1.jpg"
+    },
+    {
+      "id": 2,
+      "mark": "mercedes",
+      "model": "G-klasse",
+      "image": "id2.jpg"
+    },
+    {
+      "id": 3,
+      "mark": "bmw",
+      "model": "E46",
+      "image": "id3.jpg"
+    },
+    {
+      "id": 4,
+      "mark": "audi",
+      "model": "A4",
+      "image": "id4.jpg"
+    },
+    {
+      "id": 5,
+      "mark": "bmw",
+      "model": "E36",
+      "image": "id5.jpg"
+    }
+  ]
+}
