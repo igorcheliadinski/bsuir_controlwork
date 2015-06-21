@@ -68,3 +68,28 @@ window.onload = function () {
     $('#loginUser').attr('href', './cabinet.html').text(localStorage.getItem('currentUser'));
   }
 }
+
+$('#loginForm').on('submit', function (event) {
+  event.preventDefault();
+
+  var login = $('#login-name').val(),
+      password = $('#password').val();
+
+  $.getJSON('./data/users/users.json', function (data) {
+    for(var i in data.users) {
+      if (data.users[i].login === login && data.users[i].password === password) {
+        localStorage.setItem('currentUser', login);
+        $(location).attr('href', './index.html');
+      } else {
+        $('#loginForm').after('<span style="color:#800606;display:block;;margin-top:15px;text-decoration:underline;">Error! Not valid username or password!</span>')
+        return false;
+      }
+    }
+  });
+});
+
+$('#logout').on('click', function (event) {
+  event.preventDefault();
+  localStorage.removeItem('currentUser');
+  $(location).attr('href', $(this).attr('href'));
+});
