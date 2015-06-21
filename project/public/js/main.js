@@ -14,12 +14,36 @@ $('#cars').on('mouseover', '.car img', function () {
   $(this).animate({
     opacity: 1
   });
-})
+});
 $('#cars').on('mouseout', '.car img', function () {
   $(this).animate({
     opacity: 0.5
   });
-})
+});
+$('#cars').on('click', '.car', function () {
+  var img = $(this).find('img');
+  if (!$(this).prop('data-clicked')) {
+    $(this).prop('data-clicked', true);
+    $(this).animate({
+      width: "450px",
+      height: "330px"
+    });
+    img.animate({
+      width: "450px",
+      height: "300px"
+    });
+  } else {
+    $(this).prop('data-clicked', false);
+    $(this).animate({
+      width: "300px",
+      height: "230px"
+    });
+    img.animate({
+      width: "300px",
+      height: "200px"
+    });
+  }
+});
 $('#getCars').on('submit', function (e) {
   e.preventDefault();
   var selectedMark = $('#mark').val(),
@@ -53,10 +77,32 @@ function insert(elements) {
     var figure = $('<figure/>').addClass('car');
     var image = $('<img>').attr('src', './data/cars/img/' + value.image)
     var figcaption = $('<figcaption/>').text(value.model);
+    var span = $('<a/>').text('x').addClass('delete').css({
+      position: 'absolute',
+      backgroundColor: '#000000',
+      color: '#F00',
+      fontWeight: 'bold',
+      fontFamily: 'sans-serif',
+      fontSize: '16pt',
+      borderRadius: '50%',
+      display: 'block',
+      width: '30px',
+      height: '30px',
+      textAlign: 'center',
+      top: "-10px",
+      right: "-10px",
+      boxShadow: "0 5px 15px black",
+      zIndex: '100'
+    });
     var result = figure.html(image).append(figcaption);
+    span.appendTo(result);
     $('#cars').append(result);
   });
 }
+
+$('#cars').on('click', '.delete', function () {
+  $(this).parent().remove();
+});
 
 function shuffle(o){
   for(var j, x, k = o.length; k; j = Math.floor(Math.random() * k), x = o[--k], o[k] = o[j], o[j] = x);
@@ -81,7 +127,7 @@ $('#loginForm').on('submit', function (event) {
         localStorage.setItem('currentUser', login);
         $(location).attr('href', './index.html');
       } else {
-        $('#loginForm').after('<span style="color:#800606;display:block;;margin-top:15px;text-decoration:underline;">Error! Not valid username or password!</span>')
+        $('#loginForm').next().text('Error! Not valid username or password!');
         return false;
       }
     }
